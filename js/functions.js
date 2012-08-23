@@ -30,7 +30,7 @@ var Presentation = {
 		context.stroke();
 		
 
-		context.fillStyle = "black";
+		context.fillStyle = "#FFF";
 		context.font = '120px sans-serif';
 		context.fillText(text, px, py);
 	},
