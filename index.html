@@ -91,6 +91,7 @@
         
     -->
     <link href="css/impress-demo.css" rel="stylesheet" />
+    <link href="css/highlight.css" rel="stylesheet" />
     
     <link rel="shortcut icon" href="favicon.png" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
@@ -196,31 +197,39 @@
         down (4 times) to make it back to it's correct size.
         
     -->
-    <div class="step" data-x="0" data-y="0" data-scale="4">
-        <p>Ciclo do TDD</p><br/><br/><br/><br/><br/>
+    <div class="step" data-x="0" data-y="0" data-scale="2">
+        <p>Ciclo do TDD</p><br/><br/><br/><br/><br/><br/><br/>
     </div>
     
-    <div class="step" data-x="300" data-y="-200" data-scale="3">
-        <canvas id="redCanvas" width="578" height="200"></canvas>
-        <canvas id="arrowCanvas" width="300" height="300" style="position: absolute;top: 120px;left: 419px;"></canvas>
-    </div>
-    
-
-    <div class="step" data-x="1200" data-y="500" data-scale="3">
-        <canvas id="greenCanvas" width="578" height="200"></canvas>
+    <div class="step" data-x="0" data-y="-200" data-scale="1">
+        <canvas id="redCanvas" width="900" height="800"></canvas>
+        <canvas id="arrowCanvasRed" width="600" height="600" style="position: absolute;top: 450px;left: 880px;"></canvas>
     </div>
     
 
-    <div class="step" data-x="-600" data-y="500" data-scale="3">
-        <canvas id="blueCanvas" width="578" height="200"></canvas>
+    <div class="step" data-x="900" data-y="500" data-scale="1">
+        <canvas id="greenCanvas" width="900" height="800"></canvas>
+        <canvas id="arrowCanvasGreen" width="1200" height="600" style="position: absolute;top: 300px;left: -1000px;"></canvas>
+    </div>
+    
+
+    <div class="step" data-x="-900" data-y="500" data-scale="1">
+        <canvas id="blueCanvas" width="900" height="800"></canvas>
+        <canvas id="arrowCanvasBlue" width="600" height="600" style="position: absolute;top: -270px;left: 610px;"></canvas>
+    </div>
+    
+    <div class="step" data-x="0" data-y="0" data-scale="2">
+        <p>Ciclo do TDD</p><br/><br/><br/><br/><br/><br/><br/>
     </div>
 
     <script>
       window.onload = function() {
-    	  Presentation.canvasOval('red');
-    	  Presentation.canvasOval('green');
-    	  Presentation.canvasOval('blue');
-    	  Presentation.canvasArrow();
+    	  Presentation.canvasOval('red', "Vermelho", 190, 430);
+    	  Presentation.canvasArrowRed();
+    	  Presentation.canvasOval('green', "Verde", 300, 430);
+    	  Presentation.canvasArrowGreen();
+    	  Presentation.canvasOval('blue', "Refatoração", 130, 430);
+    	  Presentation.canvasArrowBlue();
       };
 
     </script>
@@ -232,10 +241,36 @@
         element should be rotated by 90 degrees clockwise.
         
     -->
-    <div id="its" class="step" data-x="850" data-y="3000" data-rotate="90" data-scale="5">
-        <p>It's a <strong>presentation tool</strong> <br/>
-        inspired by the idea behind <a href="http://prezi.com">prezi.com</a> <br/>
-        and based on the <strong>power of CSS3 transforms and transitions</strong> in modern browsers.</p>
+    <div id="its" class="step" data-x="850" data-y="3000" data-rotate="90" data-scale="1">
+    <div style="float:left">
+        <pre><code class="javascript">
+var data = [];
+function push(item) {
+    data.push(item);
+}
+function pop() {
+     return data.pop();
+}
+function length() {
+     return data.length;
+}
+        </code></pre>
+        </div>
+    <div style="float:left">    
+        <pre><code class="javascript">
+        module("dataStore");
+test("pop", function() {
+    push("foo");
+    push("bar")
+    equal(pop(), "bar", "popping returns the most-recently pushed item");
+});
+
+test("length", function() {
+    push("foo");
+    equal(length(), 1, "adding 1 item makes the length 1");
+});
+        </code></pre>
+        </div>
     </div>
 
     <div id="big" class="step" data-x="3500" data-y="2100" data-rotate="180" data-scale="6">
@@ -379,7 +414,9 @@ if ("ontouchstart" in document.documentElement) {
 -->
 <script src="js/impress.js"></script>
 <script src="js/functions.js"></script>
+<script src="js/highlight.js"></script>
 <script>impress().init();</script>
+<script>hljs.initHighlightingOnLoad();</script>
 
 <!--
     
