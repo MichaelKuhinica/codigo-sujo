@@ -420,6 +420,47 @@ a:focus {
 .impress-enabled          { pointer-events: none }
 .impress-enabled #impress { pointer-events: auto }
 
+div.code {
+	width: 1230px;
+}
 code {
-	font-size:25px;
+	font-size: 27px;
+	margin: 10px;
+}
+div.code .split {
+	text-align: left;
+	float: left;
+	width: 615px;
+}
+div.code .split:first-child {
+	position: absolute;
+}
+div.code .split:last-child {
+	margin-left: 615px;
+	position: relative;
+}
+div.qunit {
+	background: #00733C url(../img/logo-qunitjs.png) no-repeat 50%;
+	background-size: 80%;
+	width: 450px;
+	height: 450px;
+    border: 1px solid rgba(0, 0, 0, .3);
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+}
+div.jquery {
+	background: #39414A url(../img/logo-jquery.gif) no-repeat 50%;
+	background-size: 80%;
+	width: 450px;
+	height: 450px;
+    border: 1px solid rgba(0, 0, 0, .3);
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+}
+div.exemplo_qunit {
+	background: url(../img/exemplo_qunit.png) no-repeat;
+	background-size: 100%;
+	width: 900px;
+	height: 650px;
+	
 }

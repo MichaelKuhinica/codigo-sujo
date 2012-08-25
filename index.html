@@ -9,7 +9,7 @@
     <meta name="description" content="impress.js is a presentation tool based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com." />
     <meta name="author" content="Bartek Szopka" />
 
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+    <!-- <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" /> -->
     <link href="css/impress-demo.css" rel="stylesheet" />
     <link href="css/monokai.css" rel="stylesheet" />
     
@@ -32,6 +32,10 @@
         <span>Michael Kuhinica</span>
     </div>
 
+    <div class="step slide" data-x="0" data-y="-1500">
+        <q>Problemas em manter o código JavaScript</q><br /><br />
+    </div>
+    
     <div class="step" data-x="0" data-y="0" data-scale="2">
         <p>Ciclo do TDD</p><br/><br/><br/><br/><br/><br/><br/>
     </div>
@@ -69,109 +73,157 @@
 
     </script>
 
-    <div class="step" data-x="850" data-y="3000" data-rotate="90" data-scale="1" style="width:1230px">
-    Código não estruturado
-        <pre><code class="javascript">
-var data = [];
-function push(item) {
-    data.push(item);
-}
-function pop() {
-     return data.pop();
-}
-function length() {
-     return data.length;
-}
-        </code></pre>
+    <div class="step qunit" data-x="600" data-y="1100" data-rotate="225" data-scale="1">
+	</div>
+
+    <div class="step jquery" data-x="-600" data-y="1100" data-rotate="45" data-scale="1">
+	</div>
+	
+    <div class="step code" data-x="100" data-y="1800" data-rotate="0" data-scale="1">
+		<div class="split">
+			Exemplo do HTML
+        	<pre><code class="xml">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;Exemplo de página QUnit&lt;/title&gt;
+  &lt;link rel="stylesheet" href="/src/qunit.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id="qunit"&gt;&lt;/div&gt;
+  &lt;script src="/src/qunit.js"&gt;&lt;/script&gt;
+  &lt;script src="/src/caculadora.js"&gt;&lt;/script&gt;
+  &lt;script src="/src/testes.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+		</div>
+		<div class="split">
+			Exemplo do testes.js
+			<pre><code class="javascript">module("Funcionamento");
+test("Tem carga", function() {
+  ok(temCarga() , "Calculadora descarregada");
+});	
+
+module("Calculos");
+test("Somar dois números", function() {
+  var a = 1, b = 4;
+  equal(somar(a, b), 5);
+});
+test("Multiplicar dois números", function() {
+  var a = 2, b = 3;
+  equal(multiplicar(a, b), 6);
+});</code></pre>
+		</div>
     </div>
-    <div class="step" data-x="300" data-y="3000" data-rotate="90" data-scale="1" style="width:1230px">
-        <pre><code class="javascript">
-module("dataStore");
-test("pop", function() {
-    push("foo");
-    push("bar")
-    equal(pop(), "bar", "popping returns the most-recently pushed item");
+	<div class="step exemplo_qunit" data-x="-1300" data-y="1800" data-rotate="180" data-scale="1">
+	</div>
+	
+    <div class="step code" data-x="850" data-y="3000" data-rotate="90" data-scale="1">
+		<div class="split">
+			Descrição do problema...
+		</div>
+		<div class="split">
+		    Código não estruturado
+        	<pre><code class="javascript">var pilha = [];
+function adicionar(item) {
+    pilha.push(item);
+}
+function retirar() {
+     return pilha.pop();
+}
+function tamanho() {
+     return pilha.length;
+}</code></pre>
+		</div>
+    </div>
+    <div class="step code" data-x="150" data-y="3000" data-rotate="90" data-scale="1">
+    	<div class="split">
+        	<pre><code class="javascript">module("Armazenamento");
+test("Tamanho", function() {
+    adicionar("item1");
+    equal(tamanho(), 1);
 });
 
-test("length", function() {
-    push("foo");
-    equal(length(), 1, "adding 1 item makes the length 1");
-});
-        </code></pre>
+test("Retirar", function() {
+    adicionar("item1");
+    adicionar("item2")
+    equal(retirar(), "item2");
+});</code></pre>
+		</div>
     </div>
     
-    <div class="step" data-x="850" data-y="4300" data-rotate="90" data-scale="1" style="width:1230px">
-    	Utilização do padrão Singleton
-        <pre><code class="javascript">
-var dataStore = (function() {
-    var data = [];
+    <div class="step code" data-x="850" data-y="3630" data-rotate="90" data-scale="1">
+    	<div class="split">
+	    	Padrão Singleton
+        	<pre><code class="javascript">var armazenamento = (function() {
+    var pilha = [];
     return {
-        push: function (item) {
-            data.push(item);
+        adicionar: function (item) {
+            pilha.push(item);
         },
-        pop: function() {
-            return data.pop();
+        retirar: function() {
+            return pilha.pop();
         },
-        length: function() {
-            return data.length;
+        tamanho: function() {
+            return pilha.length;
         }
     };
-}());
-        </code></pre>
+}());</code></pre>
+		</div>
     </div>
-    <div class="step" data-x="225" data-y="4300" data-rotate="90" data-scale="1" style="width:1230px">
-        <pre><code class="javascript">
-module("dataStore");
-test("pop", function() {
-    dataStore.push("foo");
-    dataStore.push("bar")
-    equal(dataStore.pop(), "bar", "popping returns the most-recently pushed item");
+    <div class="step code" data-x="150" data-y="3630" data-rotate="90" data-scale="1">
+    	<div class="split">
+        	<pre><code class="javascript">module("Armazenamento");
+test("Tamanho", function() {
+    armazenamento.adicionar("item1");
+    equal(armazenamento.tamanho(), 1);
 });
 
-test("length", function() {
-    dataStore.push("foo");
-    equal(dataStore.length(), 1, "adding 1 item makes the length 1");
-});
-        </code></pre>
+test("Retirar", function() {
+    armazenamento.adicionar("item1");
+    armazenamento.adicionar("item2")
+    equal(armazenamento.retirar(), "item2");
+});</code></pre>
+		</div>
     </div>
     
-    <div class="step" data-x="850" data-y="5600" data-rotate="90" data-scale="1" style="width:1230px">
-    	Construir a lista quando necessário
-        <pre><code class="javascript">
-function newDataStore() {
-    var data = [];
+    <div class="step code" data-x="850" data-y="4260" data-rotate="90" data-scale="1">
+    	<div class="split">
+    	Padrão "Construtor"
+        	<pre><code class="javascript">function novoArmazenamento() {
+    var pilha = [];
     return {
-        push: function (item) {
-            data.push(item);
+        adicionar: function (item) {
+            pilha.push(item);
         },
-        pop: function() {
-            return data.pop();
+        retirar: function() {
+            return pilha.pop();
         },
-        length: function() {
-            return data.length;
+        tamanho: function() {
+            return pilha.length;
         }
     };
 }
 
-var dataStore = newDataStore();
-        </code></pre>
+var armazenamento = novoArmazenamento();</code></pre>
+		</div>
     </div>
-    <div class="step" data-x="150" data-y="5600" data-rotate="90" data-scale="1" style="width:1230px">
-        <pre><code class="javascript">
-module("dataStore");
-test("pop", function() {
-    var dataStore = newDataStore();
-    dataStore.push("foo");
-    dataStore.push("bar")
-    equal(dataStore.pop(), "bar", "popping returns the most-recently pushed item");
+    <div class="step code" data-x="150" data-y="4260" data-rotate="90" data-scale="1">
+    	<div class="split">
+        	<pre><code class="javascript">module("Armazenamento");
+test("Retirar", function() {
+    var armazenamento = novoArmazenamento();
+    armazenamento.adicionar("item1");
+    armazenamento.adicionar("item2")
+    equal(armazenamento.retirar(), "item2");
 });
 
-test("length", function() {
-    var dataStore = newDataStore();
-    dataStore.push("foo");
-    equal(dataStore.length(), 1, "adding 1 item makes the length 1");
-});
-        </code></pre>
+test("Tamanho", function() {
+    var armazenamento = novoArmazenamento();
+    armazenamento.adicionar("item1");
+    equal(armazenamento.tamanho(), 1);
+});</code></pre>
+		</div>
     </div>
 
     <div id="big" class="step" data-x="3500" data-y="2100" data-rotate="180" data-scale="6">
