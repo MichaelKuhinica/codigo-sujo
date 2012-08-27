@@ -121,7 +121,7 @@ test("Multiplicar dois números", function() {
 	
 	
 	<div class="step code" data-x="100" data-y="3700" data-rotate="90" data-scale="1">
-   		Escopo de varáveis
+   		Escopo de variável
     	<div class="split">
     		<ul class="descricao">
     			<li>Criar variáveis globais é mais fácil e perigoso do que parece;</li>
@@ -130,21 +130,62 @@ test("Multiplicar dois números", function() {
 		</div>
 		<div class="split">
         	<pre><code class="javascript">cachorro = "Bidu"; // variável global
-function mensagem1(){
-	gato = "Mingau"; // variável global
+function cebolinha(){
+	cachorro = "Floquinho"; // variável global
 }
 
 var porco = "Chovinista"; // variável global
-function mensagem2(){
-	var coelho = "Sansão"; // variável local
+function chico_bento(){
+	var porco = "Torresmo"; // variável local
 }</code></pre>
 		</div>
     </div>
 	
 	
 	
+	<div class="step code" data-x="1100" data-y="3700" data-rotate="270" data-scale="1">
+   		Hoisting de variável
+    	<div class="split">
+    		<ul class="descricao">
+    			<li>As variáveis são rastreadas e "declaradas" automaticamente no topo da função;</li>
+    			<li>Pode gerar erros de lógica;</li>
+    		</ul>
+		</div>
+		<div class="split">
+        	<pre><code class="javascript">pokemon = "Pikachu"; // variável global
+alert(pokemon); // "Pikachu"
+function ash(){
+	alert(pokemon); // "undefined"
+	var pokemon = "Squirtle"; // variável local
+	alert(pokemon); // "Squirtle"
+}
+ash();
+alert(pokemon); // "Pikachu"
+</code></pre>
+		</div>
+    </div>
+    
+	<div class="step code" data-x="1100" data-y="3100" data-rotate="270" data-scale="1">
+		<div class="split">
+			&nbsp;
+        	<pre><code class="javascript">pokemon = "Pikachu"; // variável global
+alert(pokemon); // "Pikachu"
+function ash(){
+	var pokemon;
+	alert(pokemon); // "undefined"
+	pokemon = "Squirtle"; // variável local
+	alert(pokemon); // "Squirtle"
+}
+ash();
+alert(pokemon); // "Pikachu"
+</code></pre>
+		</div>
+    </div>
+	
+	
+	
 		
-    <div class="step code" data-x="1800" data-y="4200" data-rotate="270" data-scale="1">
+    <div class="step code" data-x="2800" data-y="4200" data-rotate="270" data-scale="1">
 	    Código não estruturado
 		<div class="split">
 			<ul class="descricao">
@@ -165,7 +206,7 @@ function tamanho() {
 }</code></pre>
 		</div>
     </div>
-    <div class="step code" data-x="2500" data-y="4200" data-rotate="270" data-scale="1">
+    <div class="step code" data-x="3500" data-y="4200" data-rotate="270" data-scale="1">
     	<div class="split">
         	<pre><code class="javascript">module("Pilha sem estrutura");
 test("Tamanho", function() {
@@ -181,7 +222,7 @@ test("Retirar", function() {
 		</div>
     </div>
     
-    <div class="step code" data-x="1800" data-y="3600" data-rotate="270" data-scale="1">
+    <div class="step code" data-x="2800" data-y="3600" data-rotate="270" data-scale="1">
     	<div class="split">
 	    	Padrão Singleton
         	<pre><code class="javascript">var appLista = (function() {
@@ -200,7 +241,7 @@ test("Retirar", function() {
 }());</code></pre>
 		</div>
     </div>
-    <div class="step code" data-x="2500" data-y="3600" data-rotate="270" data-scale="1">
+    <div class="step code" data-x="3500" data-y="3600" data-rotate="270" data-scale="1">
     	<div class="split">
         	<pre><code class="javascript">module("Pilha com Singleton");
 test("Tamanho", function() {
@@ -216,7 +257,7 @@ test("Retirar", function() {
 		</div>
     </div>
     
-    <div class="step code" data-x="1800" data-y="3000" data-rotate="270" data-scale="1">
+    <div class="step code" data-x="2800" data-y="3000" data-rotate="270" data-scale="1">
     	<div class="split">
     	Padrão "Construtor"
         	<pre><code class="javascript">function novaAppLista() {
@@ -237,7 +278,7 @@ test("Retirar", function() {
 var appLista = novaAppLista();</code></pre>
 		</div>
     </div>
-    <div class="step code" data-x="2500" data-y="3000" data-rotate="270" data-scale="1">
+    <div class="step code" data-x="3500" data-y="3000" data-rotate="270" data-scale="1">
     	<div class="split">
         	<pre><code class="javascript">module("Pilha com Contrutor");
 test("Retirar", function() {
