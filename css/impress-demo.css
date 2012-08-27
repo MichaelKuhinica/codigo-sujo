@@ -441,7 +441,7 @@ div.code .split:last-child {
 }
 div.qunit {
 	background: #00733C url(../img/logo-qunitjs.png) no-repeat 50%;
-	background-size: 80%;
+	background-size: 90%;
 	width: 450px;
 	height: 450px;
     border: 1px solid rgba(0, 0, 0, .3);
@@ -449,8 +449,8 @@ div.qunit {
     box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
 }
 div.jquery {
-	background: #39414A url(../img/logo-jquery.gif) no-repeat 50%;
-	background-size: 80%;
+	background: #0f1923 url(../img/logo-jquery.png) no-repeat 50%;
+	background-size: 90%;
 	width: 450px;
 	height: 450px;
     border: 1px solid rgba(0, 0, 0, .3);
