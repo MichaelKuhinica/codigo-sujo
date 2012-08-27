@@ -59,15 +59,15 @@ var Presentation = {
 		ctx = canvas.getContext("2d")
 		ctx.lineWidth = 10;
 		ctx.beginPath();  
-		ctx.moveTo(100, 140);
-		ctx.quadraticCurveTo(560, 400, 1090, 140);
+		ctx.moveTo(350, 140);
+		ctx.quadraticCurveTo(760, 300, 1090, 140);
 		ctx.stroke(); 
 		
 		ctx.beginPath(); 
-		ctx.moveTo(100, 140);
-		ctx.lineTo(170, 110);
-		ctx.lineTo(130, 220);
-		ctx.lineTo(100, 140);
+		ctx.moveTo(350, 140);
+		ctx.lineTo(420, 110);
+		ctx.lineTo(380, 220);
+		ctx.lineTo(350, 140);
 		ctx.lineCap = "round";
 		ctx.lineJoin = "round";
 		ctx.stroke(); 

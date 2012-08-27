@@ -26,9 +26,6 @@ footer, header, hgroup, menu, nav, section {
 body {
     line-height: 1;
 }
-ol, ul {
-    list-style: none;
-}
 blockquote, q {
     quotes: none;
 }
@@ -424,19 +421,19 @@ div.code {
 	width: 1230px;
 }
 code {
-	font-size: 27px;
+	font-size: 26px;
 	margin: 10px;
 }
 div.code .split {
 	text-align: left;
 	float: left;
-	width: 615px;
+	width: 580px;
 }
 div.code .split:first-child {
 	position: absolute;
 }
 div.code .split:last-child {
-	margin-left: 615px;
+	margin-left: 580px;
 	position: relative;
 }
 div.qunit {
@@ -458,9 +455,13 @@ div.jquery {
     box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
 }
 div.exemplo_qunit {
-	background: url(../img/exemplo_qunit.png) no-repeat;
-	background-size: 100%;
-	width: 900px;
-	height: 650px;
-	
+	text-align: center;
+	background: url(../img/exemplo_qunit.png) no-repeat 50px 113px;
+	background-size: 90%;
+	width: 950px;
+	height: 740px;
+}
+ul.descricao {
+	font-size: 27px;
+	padding: 10px;
 }

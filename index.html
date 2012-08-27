@@ -10,7 +10,7 @@
     <meta name="author" content="Bartek Szopka" />
 
     <!-- <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" /> -->
-    <link href="css/impress-demo.css" rel="stylesheet" />
+    <link href="css/impress.css" rel="stylesheet" />
     <link href="css/monokai.css" rel="stylesheet" />
     
     <link rel="shortcut icon" href="favicon.png" />
@@ -42,19 +42,19 @@
     
     <div class="step" data-x="0" data-y="-200" data-scale="1">
         <canvas id="redCanvas" width="900" height="800"></canvas>
-        <canvas id="arrowCanvasRed" width="600" height="600" style="position: absolute;top: 450px;left: 880px;"></canvas>
+        <canvas id="arrowCanvasRed" width="600" height="600" style="position: absolute;top: 440px;left: 880px;"></canvas>
     </div>
     
 
-    <div class="step" data-x="900" data-y="500" data-scale="1">
+    <div class="step" data-x="750" data-y="500" data-scale="1">
         <canvas id="greenCanvas" width="900" height="800"></canvas>
         <canvas id="arrowCanvasGreen" width="1200" height="600" style="position: absolute;top: 300px;left: -1000px;"></canvas>
     </div>
     
 
-    <div class="step" data-x="-900" data-y="500" data-scale="1">
+    <div class="step" data-x="-800" data-y="500" data-scale="1">
         <canvas id="blueCanvas" width="900" height="800"></canvas>
-        <canvas id="arrowCanvasBlue" width="600" height="600" style="position: absolute;top: -270px;left: 610px;"></canvas>
+        <canvas id="arrowCanvasBlue" width="600" height="600" style="position: absolute;top: -280px;left: 505px;"></canvas>
     </div>
     
     <div class="step" data-x="0" data-y="0" data-scale="2">
@@ -79,9 +79,9 @@
     <div class="step jquery" data-x="-600" data-y="1100" data-rotate="45" data-scale="1">
 	</div>
 	
-    <div class="step code" data-x="100" data-y="1800" data-rotate="0" data-scale="1">
+    <div class="step code" data-x="0" data-y="1800" data-rotate="0" data-scale="1">
+		Exemplo de configuração dos testes do QUnit
 		<div class="split">
-			Exemplo do HTML
         	<pre><code class="xml">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -98,7 +98,6 @@
 &lt;/html&gt;</code></pre>
 		</div>
 		<div class="split">
-			Exemplo do testes.js
 			<pre><code class="javascript">module("Funcionamento");
 test("Tem carga", function() {
   ok(temCarga() , "Calculadora descarregada");
@@ -115,15 +114,45 @@ test("Multiplicar dois números", function() {
 });</code></pre>
 		</div>
     </div>
-	<div class="step exemplo_qunit" data-x="-1300" data-y="1800" data-rotate="180" data-scale="1">
+	<div class="step exemplo_qunit" data-x="0" data-y="2600" data-rotate="180" data-scale="1">
+		Resultado ao executar os testes
 	</div>
 	
-    <div class="step code" data-x="850" data-y="3000" data-rotate="90" data-scale="1">
-		<div class="split">
-			Descrição do problema...
+	
+	
+	<div class="step code" data-x="100" data-y="3700" data-rotate="90" data-scale="1">
+   		Escopo de varáveis
+    	<div class="split">
+    		<ul class="descricao">
+    			<li>Criar variáveis globais é mais fácil e perigoso do que parece;</li>
+    			<li>Váriaveis tem escopo por função e não por bloco;</li>
+    		</ul>
 		</div>
 		<div class="split">
-		    Código não estruturado
+        	<pre><code class="javascript">cachorro = "Bidu"; // variável global
+function mensagem1(){
+	gato = "Mingau"; // variável global
+}
+
+var porco = "Chovinista"; // variável global
+function mensagem2(){
+	var coelho = "Sansão"; // variável local
+}</code></pre>
+		</div>
+    </div>
+	
+	
+	
+		
+    <div class="step code" data-x="1800" data-y="4200" data-rotate="270" data-scale="1">
+	    Código não estruturado
+		<div class="split">
+			<ul class="descricao">
+				<li>Variável global acessível em qualquer parte da aplicação;</li>
+				<li>Funções soltas que utilizam a variável global;</li>
+			</ul>
+		</div>
+		<div class="split">
         	<pre><code class="javascript">var pilha = [];
 function adicionar(item) {
     pilha.push(item);
@@ -136,9 +165,9 @@ function tamanho() {
 }</code></pre>
 		</div>
     </div>
-    <div class="step code" data-x="150" data-y="3000" data-rotate="90" data-scale="1">
+    <div class="step code" data-x="2500" data-y="4200" data-rotate="270" data-scale="1">
     	<div class="split">
-        	<pre><code class="javascript">module("Armazenamento");
+        	<pre><code class="javascript">module("Pilha sem estrutura");
 test("Tamanho", function() {
     adicionar("item1");
     equal(tamanho(), 1);
@@ -152,10 +181,10 @@ test("Retirar", function() {
 		</div>
     </div>
     
-    <div class="step code" data-x="850" data-y="3630" data-rotate="90" data-scale="1">
+    <div class="step code" data-x="1800" data-y="3600" data-rotate="270" data-scale="1">
     	<div class="split">
 	    	Padrão Singleton
-        	<pre><code class="javascript">var armazenamento = (function() {
+        	<pre><code class="javascript">var appLista = (function() {
     var pilha = [];
     return {
         adicionar: function (item) {
@@ -171,26 +200,26 @@ test("Retirar", function() {
 }());</code></pre>
 		</div>
     </div>
-    <div class="step code" data-x="150" data-y="3630" data-rotate="90" data-scale="1">
+    <div class="step code" data-x="2500" data-y="3600" data-rotate="270" data-scale="1">
     	<div class="split">
-        	<pre><code class="javascript">module("Armazenamento");
+        	<pre><code class="javascript">module("Pilha com Singleton");
 test("Tamanho", function() {
-    armazenamento.adicionar("item1");
-    equal(armazenamento.tamanho(), 1);
+    appLista.adicionar("item1");
+    equal(appLista.tamanho(), 1);
 });
 
 test("Retirar", function() {
-    armazenamento.adicionar("item1");
-    armazenamento.adicionar("item2")
-    equal(armazenamento.retirar(), "item2");
+    appLista.adicionar("item1");
+    appLista.adicionar("item2")
+    equal(appLista.retirar(), "item2");
 });</code></pre>
 		</div>
     </div>
     
-    <div class="step code" data-x="850" data-y="4260" data-rotate="90" data-scale="1">
+    <div class="step code" data-x="1800" data-y="3000" data-rotate="270" data-scale="1">
     	<div class="split">
     	Padrão "Construtor"
-        	<pre><code class="javascript">function novoArmazenamento() {
+        	<pre><code class="javascript">function novaAppLista() {
     var pilha = [];
     return {
         adicionar: function (item) {
@@ -205,55 +234,25 @@ test("Retirar", function() {
     };
 }
 
-var armazenamento = novoArmazenamento();</code></pre>
+var appLista = novaAppLista();</code></pre>
 		</div>
     </div>
-    <div class="step code" data-x="150" data-y="4260" data-rotate="90" data-scale="1">
+    <div class="step code" data-x="2500" data-y="3000" data-rotate="270" data-scale="1">
     	<div class="split">
-        	<pre><code class="javascript">module("Armazenamento");
+        	<pre><code class="javascript">module("Pilha com Contrutor");
 test("Retirar", function() {
-    var armazenamento = novoArmazenamento();
-    armazenamento.adicionar("item1");
-    armazenamento.adicionar("item2")
-    equal(armazenamento.retirar(), "item2");
+    var appLista = novaAppLista();
+    appLista.adicionar("item1");
+    appLista.adicionar("item2")
+    equal(appLista.retirar(), "item2");
 });
 
 test("Tamanho", function() {
-    var armazenamento = novoArmazenamento();
-    armazenamento.adicionar("item1");
-    equal(armazenamento.tamanho(), 1);
+    var appLista = novaAppLista();
+    appLista.adicionar("item1");
+    equal(appLista.tamanho(), 1);
 });</code></pre>
 		</div>
-    </div>
-
-    <div id="big" class="step" data-x="3500" data-y="2100" data-rotate="180" data-scale="6">
-        <p>visualize your <b>big</b> <span class="thoughts">thoughts</span></p>
-    </div>
-
-    <div id="tiny" class="step" data-x="2825" data-y="2325" data-z="-3000" data-rotate="300" data-scale="1">
-        <p>and <b>tiny</b> ideas</p>
-    </div>
-
-    <div id="ing" class="step" data-x="3500" data-y="-850" data-rotate="270" data-scale="6">
-        <p>by <b class="positioning">positioning</b>, <b class="rotating">rotating</b> and <b class="scaling">scaling</b> them on an infinite canvas</p>
-    </div>
-
-    <div id="imagination" class="step" data-x="6700" data-y="-300" data-scale="6">
-        <p>the only <b>limit</b> is your <b class="imagination">imagination</b></p>
-    </div>
-
-    <div id="source" class="step" data-x="6300" data-y="2000" data-rotate="20" data-scale="4">
-        <p>want to know more?</p>
-        <q><a href="http://github.com/bartaz/impress.js">use the source</a>, Luke!</q>
-    </div>
-
-    <div id="one-more-thing" class="step" data-x="6000" data-y="4000" data-scale="2">
-        <p>one more thing...</p>
-    </div>
-
-    <div id="its-in-3d" class="step" data-x="6200" data-y="4300" data-z="-100" data-rotate-x="-40" data-rotate-y="10" data-scale="2">
-        <p><span class="have">have</span> <span class="you">you</span> <span class="noticed">noticed</span> <span class="its">it's</span> <span class="in">in</span> <b>3D<sup>*</sup></b>?</p>
-        <span class="footnote">* beat that, prezi ;)</span>
     </div>
 
     <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
