@@ -386,11 +386,63 @@ test("Tamanho", function() {
 		</div>
     </div>
 
+
+
+	<div class="step code" data-x="4000" data-y="0" data-rotate="0" data-scale="1">
+     	Testes de requisições em Ajax
+		<div class="split">
+			<ul class="descricao">
+				<li>Dependência do servidor para responder a requisição;</li>
+				<li>Falta de controle dos dados da resposta;</li>
+			</ul>
+		</div>
+    	<div class="split">
+        	<pre><code class="xml">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Saldo da Conta&lt;/title&gt;
+    &lt;script src="../jquery.js"&gt;&lt;/script&gt;
+    &lt;script src="../mockajax.js"&gt;&lt;/script&gt;
+    &lt;script src="../exemplo.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+    	$(function(){ atualizaSaldo(); });
+    &lt;/script&gt;
+  &lt;/head&gt;
+&lt;body&gt;
+	&lt;div id="saldo"&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+		</div>
+    </div>
+	<div class="step code" data-x="4600" data-y="0" data-rotate="0" data-scale="1">
+    	<div class="split">
+    		jQuery Mockajax
+        	<pre><code class="javascript">asyncTest("Mockajax", function() {
+  expect( 1 );
 	
-    <div class="step phantomjs" data-x="4000" data-y="0" data-rotate="-45" data-scale="1">
+  $('#qunit-fixture').html($('&lt;div id="saldo"&gt;'));
+  $.mockjax({
+    url: '/buscar_saldo?id=1',
+    responseTime: 75,
+    responseText: { status: 'valido', saldo: '1.00'	}
+  });
+	
+  atualizaSaldo(1);
+  setTimeout(function() {
+    equal($('#saldo').html(), 'Saldo: 1.00');
+    start();
+  }, 100);
+});
+</code></pre>
+		</div>
+    </div>
+
+
+	
+    <div class="step phantomjs" data-x="4000" data-y="1000" data-rotate="-45" data-scale="1">
 	</div>
 	
-    <div class="step" data-x="5000" data-y="0" data-rotate="0" data-scale="1">
+    <div class="step" data-x="5000" data-y="1000" data-rotate="0" data-scale="1">
     	Rodando em linha de comando
     	<ol class="descricao">
     		<li>Instalar o PhantomJS <br /><a href="http://phantomjs.org/download.html">http://phantomjs.org/download.html</a></li>
