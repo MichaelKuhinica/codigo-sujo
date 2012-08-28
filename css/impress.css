@@ -461,7 +461,18 @@ div.exemplo_qunit {
 	width: 950px;
 	height: 740px;
 }
+ol.descricao,
 ul.descricao {
 	font-size: 27px;
 	padding: 10px;
+}
+
+div.phantomjs {
+	background: #43413E url(../img/logo-phantomjs.png) no-repeat 50%;
+	background-size: 90%;
+	width: 450px;
+	height: 450px;
+    border: 1px solid rgba(0, 0, 0, .3);
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
 }

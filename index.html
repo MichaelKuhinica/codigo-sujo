@@ -73,7 +73,7 @@
 
     </script>
 
-    <div class="step qunit" data-x="600" data-y="1100" data-rotate="225" data-scale="1">
+    <div class="step qunit" data-x="600" data-y="1100" data-rotate="-45" data-scale="1">
 	</div>
 
     <div class="step jquery" data-x="-600" data-y="1100" data-rotate="45" data-scale="1">
@@ -114,7 +114,7 @@ test("Multiplicar dois números", function() {
 });</code></pre>
 		</div>
     </div>
-	<div class="step exemplo_qunit" data-x="0" data-y="2600" data-rotate="180" data-scale="1">
+	<div class="step exemplo_qunit" data-x="0" data-y="2600" data-rotate="0" data-scale="1">
 		Resultado ao executar os testes
 	</div>
 	
@@ -147,8 +147,8 @@ function chico_bento(){
    		Hoisting de variável
     	<div class="split">
     		<ul class="descricao">
-    			<li>As variáveis são rastreadas e "declaradas" automaticamente no topo da função;</li>
-    			<li>Pode gerar erros de lógica;</li>
+    			<li>As variáveis são rastreadas e "declaradas" automaticamente no topo do escopo;</li>
+    			<li>Pode gerar erros lógicos de interpretação;</li>
     		</ul>
 		</div>
 		<div class="split">
@@ -167,7 +167,7 @@ alert(pokemon); // "Pikachu"
     
 	<div class="step code" data-x="1100" data-y="3100" data-rotate="270" data-scale="1">
 		<div class="split">
-			&nbsp;
+			Como é interpretado
         	<pre><code class="javascript">pokemon = "Pikachu"; // variável global
 alert(pokemon); // "Pikachu"
 function ash(){
@@ -184,8 +184,89 @@ alert(pokemon); // "Pikachu"
 	
 	
 	
+	<div class="step code" data-x="2700" data-y="3700" data-rotate="180" data-scale="1">
+   		Declaração de variáveis espalhadas no escopo
+    	<div class="split">
+    		<ul class="descricao">
+    			<li>Declarar todas as variáveis no início do escopo;</li>
+    			<li>Evita erros causados pelo hoisting;</li>
+    		</ul>
+		</div>
+		<div class="split">
+        	<pre><code class="javascript">function looping(){
+  divs = ["sidebar", "aviso", "news_1", "footer"];
+  ...
+  for(i = 0; i &lt; divs.length; i++) {
+    $("#"+divs[i]).removeClass("ativo");
+  }
+}
+</code></pre>
+		</div>
+    </div>
+	
+	<div class="step code" data-x="2100" data-y="3700" data-rotate="180" data-scale="1">
+		<div class="split">
+			Padrão Single var
+        	<pre><code class="javascript">function looping(){
+  var divs, i, max;
+  divs = ["sidebar", "aviso", "news_1", "footer"];
+  ...
+  for(i = 0, max = divs.length; i &lt; max; i++) {
+    $("#"+divs[i]).removeClass("ativo");
+  }  
+}
+</code></pre>
+		</div>
+    </div>
+	
+	
+	
+	<div class="step code" data-x="2100" data-y="2500" data-rotate="0" data-scale="1">
+   		Código não estruturado
+    	<div class="split">
+    		<ul class="descricao">
+    			<li>Tenha controle do escopo das variáveis;</li>
+    			<li>Encapsule as funções por funcionalidade;</li>
+    			<li>Código independente;</li>
+    			<li>Variável undefined segura;</li>
+    		</ul>
+		</div>
+		<div class="split">
+        	<pre><code class="javascript">aviso_id = "#aviso";
+function someAviso() {
+  $(aviso_id).fadeOut('slow');
+}
+function mudaAviso(msg) {
+  $(aviso_id).html(msg);
+}
+</code></pre>
+		</div>
+    </div>
+	
+	<div class="step code" data-x="2700" data-y="2500" data-rotate="0" data-scale="1">
+		<div class="split">
+			Padrão Module
+        	<pre><code class="javascript">var avisoModule = (function($, undefined){
+  var aviso_id = "#aviso";
+  return {
+    someAviso: function() { 
+      $(aviso_id).fadeOut('slow');
+    },
+    mudaAviso: function(msg) {
+      $(aviso_id).html(msg);
+    }
+  };
+})(jQuery);
+
+avisoModule.mudaAviso("Teste");
+</code></pre>
+		</div>
+    </div>
+    
+	
+	
 		
-    <div class="step code" data-x="2800" data-y="4200" data-rotate="270" data-scale="1">
+    <div class="step code" data-x="2000" data-y="1200" data-rotate="-90" data-scale="1">
 	    Código não estruturado
 		<div class="split">
 			<ul class="descricao">
@@ -206,7 +287,14 @@ function tamanho() {
 }</code></pre>
 		</div>
     </div>
-    <div class="step code" data-x="3500" data-y="4200" data-rotate="270" data-scale="1">
+    <div class="step code" data-x="2700" data-y="1200" data-rotate="-90" data-scale="1">
+     Problemas no testes
+		<div class="split">
+			<ul class="descricao">
+				<li>Dependência entre os casos de testes;</li>
+				<li>Dependência não explícita;</li>
+			</ul>
+		</div>
     	<div class="split">
         	<pre><code class="javascript">module("Pilha sem estrutura");
 test("Tamanho", function() {
@@ -222,7 +310,7 @@ test("Retirar", function() {
 		</div>
     </div>
     
-    <div class="step code" data-x="2800" data-y="3600" data-rotate="270" data-scale="1">
+    <div class="step code" data-x="2000" data-y="600" data-rotate="-90" data-scale="1">
     	<div class="split">
 	    	Padrão Singleton
         	<pre><code class="javascript">var appLista = (function() {
@@ -241,7 +329,8 @@ test("Retirar", function() {
 }());</code></pre>
 		</div>
     </div>
-    <div class="step code" data-x="3500" data-y="3600" data-rotate="270" data-scale="1">
+    <div class="step code" data-x="2700" data-y="600" data-rotate="-90" data-scale="1">
+    	&nbsp;
     	<div class="split">
         	<pre><code class="javascript">module("Pilha com Singleton");
 test("Tamanho", function() {
@@ -257,7 +346,7 @@ test("Retirar", function() {
 		</div>
     </div>
     
-    <div class="step code" data-x="2800" data-y="3000" data-rotate="270" data-scale="1">
+    <div class="step code" data-x="2000" data-y="0" data-rotate="-90" data-scale="1">
     	<div class="split">
     	Padrão "Construtor"
         	<pre><code class="javascript">function novaAppLista() {
@@ -278,7 +367,8 @@ test("Retirar", function() {
 var appLista = novaAppLista();</code></pre>
 		</div>
     </div>
-    <div class="step code" data-x="3500" data-y="3000" data-rotate="270" data-scale="1">
+    <div class="step code" data-x="2700" data-y="0" data-rotate="-90" data-scale="1">
+    	&nbsp;
     	<div class="split">
         	<pre><code class="javascript">module("Pilha com Contrutor");
 test("Retirar", function() {
@@ -295,6 +385,22 @@ test("Tamanho", function() {
 });</code></pre>
 		</div>
     </div>
+
+	
+    <div class="step phantomjs" data-x="4000" data-y="0" data-rotate="-45" data-scale="1">
+	</div>
+	
+    <div class="step" data-x="5000" data-y="0" data-rotate="0" data-scale="1">
+    	Rodando em linha de comando
+    	<ol class="descricao">
+    		<li>Instalar o PhantomJS <br /><a href="http://phantomjs.org/download.html">http://phantomjs.org/download.html</a></li>
+    		<li>Executar usando o script run-qunit.js <br /><a href="https://github.com/ariya/phantomjs/blob/master/examples/run-qunit.js">https://github.com/ariya/phantomjs/blob/master/examples/run-qunit.js</a></li>
+    		<pre><code class="no-highlight">phantomjs run-qunit.js tests/js/index.html</code></pre>
+    		<li>Se retornar 0, não existem falhas, se retornar 1, algum teste falhou.</li>
+    		<pre><code class="no-highlight">Tests completed in 454 milliseconds.
+230 tests of 230 passed, 0 failed.</code></pre>
+    	</ol>
+	</div>
 
     <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
     </div>
