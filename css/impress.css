@@ -476,3 +476,12 @@ div.phantomjs {
     border-radius: 10px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
 }
+
+div.cat-sad {
+	background: #FFF url(../img/cat-sad.jpg) no-repeat 50% 50%;
+	background-size: 90%;
+	vertical-align: bottom;
+	color: #FFF;
+	font-size: 45px;
+	line-height: 72px;
+}	
