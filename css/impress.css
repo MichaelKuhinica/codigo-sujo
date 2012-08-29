@@ -514,3 +514,12 @@ div.depende-de-todos h1 {
     font-size: 55px;
     line-height: 72px;
 }
+
+div.juarez {
+    background: url(../img/juarez.jpg) no-repeat 50px 113px;
+    background-size: 90%;
+    text-align: center;
+
+    width: 797px;
+    height: 674px;
+}
