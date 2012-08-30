@@ -421,6 +421,46 @@ a:focus {
     opacity: 0.5
 }
 
+div.capa {
+	background: #00733C url(../img/postits.jpg) no-repeat 50%;
+	background-size: 100%;
+}
+
+div.fundo {
+	background: #f4f5f6;
+	position: absolute;
+	top: 50px;
+	left: 50px;
+	width: 800px;
+	height: 600px;
+	color: #3d484e;
+}
+
+div.fundo q {
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	top: 100px;
+}
+
+div.fundo div.autor {
+	position: absolute;
+	top: 450px;
+	left: 70px;
+}
+
+div.fundo div.autor span {
+	font-weight: bold;
+	display: block;
+	line-height: 50px;
+}
+
+div.fundo img {
+	position: absolute;
+	top: 470px;
+	left: 460px;
+}
+
 div.code {
 	width: 1230px;
 }
