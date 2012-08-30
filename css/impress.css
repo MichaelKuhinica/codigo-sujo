@@ -571,3 +571,13 @@ div.github-social {
     width: 797px;
     height: 774px;
 }
+
+div.referencias strong {
+    font-size: 0.8em;
+    line-height: 20px;
+}
+
+div.referencias p {
+    font-size: 0.5em;
+    padding-bottom: 10px;
+}
