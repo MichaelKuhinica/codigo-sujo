@@ -541,3 +541,33 @@ div.armstrong {
     width: 797px;
     height: 774px;
 }
+
+div.github-intro {
+    background: url(../img/github-logo.png) no-repeat 50% 50%;
+    background-size: 81%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 205%;
+    width: 797px;
+    height: 774px;
+}
+
+div.github-ask {
+    background: url(../img/github-ask.png) no-repeat 50% 50%;
+    background-size: 90%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 400%;
+    width: 797px;
+    height: 774px;
+}
+
+div.github-social {
+    background: url(../img/github-social.png) no-repeat 50% 50%;
+    background-size: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 350%;
+    width: 797px;
+    height: 774px;
+}
