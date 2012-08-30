@@ -532,3 +532,12 @@ div.real-code {
     width: 797px;
     height: 674px;
 }
+
+div.armstrong {
+    background: url(../img/armstrong.jpg) no-repeat 50% 131px;
+    background-size: 76%;
+    text-align: center;
+    font-size: 400%;
+    width: 797px;
+    height: 674px;
+}
