@@ -523,3 +523,12 @@ div.juarez {
     width: 797px;
     height: 674px;
 }
+
+div.real-code {
+    background: url(../img/real-code.png) no-repeat 50px 131px;
+    background-size: 90%;
+    text-align: center;
+    font-size: 400%;
+    width: 797px;
+    height: 674px;
+}
