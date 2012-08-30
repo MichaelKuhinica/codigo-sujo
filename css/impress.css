@@ -581,3 +581,13 @@ div.referencias p {
     font-size: 0.5em;
     padding-bottom: 10px;
 }
+
+div.duvidas {
+    background: url(../img/philosoraptor.jpg) no-repeat 50% 50%;
+    background-size: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 350%;
+    width: 750px;
+    height: 774px;
+}
