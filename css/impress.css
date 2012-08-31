@@ -462,22 +462,22 @@ div.fundo img {
 }
 
 div.code {
-	width: 1230px;
+	width: 900px;
+	padding: 0px;
 }
 code {
-	font-size: 26px;
-	margin: 10px;
+	font-size: 20px;
 }
 div.code .split {
 	text-align: left;
 	float: left;
-	width: 580px;
+	width: 440px;
 }
 div.code .split:first-child {
 	position: absolute;
 }
 div.code .split:last-child {
-	margin-left: 580px;
+	margin-left: 460px;
 	position: relative;
 }
 div.qunit {

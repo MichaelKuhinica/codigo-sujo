@@ -40,14 +40,14 @@ var Presentation = {
 		ctx.lineWidth = 10;
 		ctx.beginPath();  
 		ctx.moveTo(10, 10);
-		ctx.quadraticCurveTo(380, 200, 380, 485);
+		ctx.quadraticCurveTo(250, 150, 180, 485);
 		ctx.stroke(); 
 		
 		ctx.beginPath(); 
-		ctx.moveTo(380, 490);
-		ctx.lineTo(435, 440);
-		ctx.lineTo(320, 450);
-		ctx.lineTo(380, 490);
+		ctx.moveTo(180, 490);
+		ctx.lineTo(245, 450);
+		ctx.lineTo(130, 435);
+		ctx.lineTo(180, 490);
 		ctx.lineCap = "round";
 		ctx.lineJoin = "round";
 		ctx.stroke(); 
@@ -59,15 +59,15 @@ var Presentation = {
 		ctx = canvas.getContext("2d")
 		ctx.lineWidth = 10;
 		ctx.beginPath();  
-		ctx.moveTo(350, 140);
-		ctx.quadraticCurveTo(760, 300, 1090, 140);
+		ctx.moveTo(710, 140);
+		ctx.quadraticCurveTo(960, 200, 1090, 140);
 		ctx.stroke(); 
 		
 		ctx.beginPath(); 
-		ctx.moveTo(350, 140);
-		ctx.lineTo(420, 110);
-		ctx.lineTo(380, 220);
-		ctx.lineTo(350, 140);
+		ctx.moveTo(710, 140);
+		ctx.lineTo(780, 90);
+		ctx.lineTo(750, 210);
+		ctx.lineTo(710, 140);
 		ctx.lineCap = "round";
 		ctx.lineJoin = "round";
 		ctx.stroke(); 
@@ -79,15 +79,15 @@ var Presentation = {
 		ctx = canvas.getContext("2d")
 		ctx.lineWidth = 10;
 		ctx.beginPath();  
-		ctx.moveTo(380, 50);
-		ctx.quadraticCurveTo(0, 200, 10, 525);
+		ctx.moveTo(210, 50);
+		ctx.quadraticCurveTo(-20, 200, 10, 525);
 		ctx.stroke(); 
 		
 		ctx.beginPath(); 
-		ctx.moveTo(380, 50);
-		ctx.lineTo(340, 130);
-		ctx.lineTo(310, 20);
-		ctx.lineTo(380, 50);
+		ctx.moveTo(220, 50);
+		ctx.lineTo(200, 130);
+		ctx.lineTo(150, 30);
+		ctx.lineTo(220, 50);
 		ctx.lineCap = "round";
 		ctx.lineJoin = "round";
 		ctx.stroke(); 

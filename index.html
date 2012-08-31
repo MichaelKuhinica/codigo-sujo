@@ -61,13 +61,13 @@
     </div>
     
 
-    <div class="step" data-x="750" data-y="500" data-scale="1">
+    <div class="step" data-x="550" data-y="500" data-scale="1">
         <canvas id="greenCanvas" width="900" height="800"></canvas>
         <canvas id="arrowCanvasGreen" width="1200" height="600" style="position: absolute;top: 300px;left: -1000px;"></canvas>
     </div>
     
 
-    <div class="step" data-x="-800" data-y="500" data-scale="1">
+    <div class="step" data-x="-640" data-y="500" data-scale="1">
         <canvas id="blueCanvas" width="900" height="800"></canvas>
         <canvas id="arrowCanvasBlue" width="600" height="600" style="position: absolute;top: -280px;left: 505px;"></canvas>
     </div>
@@ -95,7 +95,7 @@
 	</div>
 	
     <div class="step code" data-x="0" data-y="1800" data-rotate="0" data-scale="1">
-		Exemplo de configuração dos testes do QUnit
+		Criando os primeiros testes com QUnit
 		<div class="split">
         	<pre><code class="xml">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -148,12 +148,12 @@ test("Multiplicar dois números", function() {
 		<div class="split">
         	<pre><code class="javascript">cachorro = "Bidu"; // variável global
 function cebolinha(){
-	cachorro = "Floquinho"; // variável global
+  cachorro = "Floquinho"; // variável global
 }
 
 var porco = "Chovinista"; // variável global
 function chico_bento(){
-	var porco = "Torresmo"; // variável local
+  var porco = "Torresmo"; // variável local
 }</code></pre>
 		</div>
     </div>
@@ -182,7 +182,7 @@ alert(pokemon); // "Pikachu"
 		</div>
     </div>
     
-	<div class="step code" data-x="1100" data-y="3100" data-rotate="270" data-scale="1">
+	<div class="step code" data-x="1100" data-y="3240" data-rotate="270" data-scale="1">
 		<div class="split">
 			Como é interpretado
         	<pre><code class="javascript">pokemon = "Pikachu"; // variável global
@@ -202,7 +202,7 @@ alert(pokemon); // "Pikachu"
 	
 	
 	<div class="step code" data-x="2700" data-y="3700" data-rotate="180" data-scale="1">
-   		Declaração de variáveis espalhadas no escopo
+   		Onde estão as variáveis?
     	<div class="split">
     		<ul class="descricao">
     			<li>Declarar todas as variáveis no início do escopo;</li>
@@ -221,7 +221,7 @@ alert(pokemon); // "Pikachu"
 		</div>
     </div>
 	
-	<div class="step code" data-x="2100" data-y="3700" data-rotate="180" data-scale="1">
+	<div class="step code" data-x="2240" data-y="3700" data-rotate="180" data-scale="1">
 		<div class="split">
 			Padrão Single var
         	<pre><code class="javascript">function looping(){
@@ -260,7 +260,7 @@ function mudaAviso(msg) {
 		</div>
     </div>
 	
-	<div class="step code" data-x="2700" data-y="2500" data-rotate="0" data-scale="1">
+	<div class="step code" data-x="2560" data-y="2500" data-rotate="0" data-scale="1">
 		<div class="split">
 			Padrão Module
         	<pre><code class="javascript">var avisoModule = (function($, undefined){
@@ -327,7 +327,7 @@ test("Retirar", function() {
 		</div>
     </div>
     
-    <div class="step code" data-x="2000" data-y="600" data-rotate="-90" data-scale="1">
+    <div class="step code" data-x="2000" data-y="740" data-rotate="-90" data-scale="1">
     	<div class="split">
 	    	Padrão Singleton
         	<pre><code class="javascript">var appLista = (function() {
@@ -346,7 +346,7 @@ test("Retirar", function() {
 }());</code></pre>
 		</div>
     </div>
-    <div class="step code" data-x="2700" data-y="600" data-rotate="-90" data-scale="1">
+    <div class="step code" data-x="2700" data-y="740" data-rotate="-90" data-scale="1">
     	&nbsp;
     	<div class="split">
         	<pre><code class="javascript">module("Pilha com Singleton");
@@ -363,7 +363,7 @@ test("Retirar", function() {
 		</div>
     </div>
     
-    <div class="step code" data-x="2000" data-y="0" data-rotate="-90" data-scale="1">
+    <div class="step code" data-x="2000" data-y="280" data-rotate="-90" data-scale="1">
     	<div class="split">
     	Padrão "Construtor"
         	<pre><code class="javascript">function novaAppLista() {
@@ -384,7 +384,7 @@ test("Retirar", function() {
 var appLista = novaAppLista();</code></pre>
 		</div>
     </div>
-    <div class="step code" data-x="2700" data-y="0" data-rotate="-90" data-scale="1">
+    <div class="step code" data-x="2700" data-y="280" data-rotate="-90" data-scale="1">
     	&nbsp;
     	<div class="split">
         	<pre><code class="javascript">module("Pilha com Contrutor");
@@ -431,7 +431,7 @@ test("Tamanho", function() {
 &lt;/html&gt;</code></pre>
 		</div>
     </div>
-	<div class="step code" data-x="4600" data-y="-1000" data-rotate="0" data-scale="1">
+	<div class="step code" data-x="4460" data-y="-1000" data-rotate="0" data-scale="1">
     	<div class="split">
           &nbsp;
         	<pre><code class="javascript">test("Adicionar fixture", function() {
@@ -482,7 +482,7 @@ test("Tamanho", function() {
 &lt;/html&gt;</code></pre>
 		</div>
     </div>
-	<div class="step code" data-x="4600" data-y="0" data-rotate="0" data-scale="1">
+	<div class="step code" data-x="4460" data-y="0" data-rotate="0" data-scale="1">
     	<div class="split">
     		jQuery Mockajax
         	<pre><code class="javascript">asyncTest("Mockajax", function() {
