@@ -138,36 +138,43 @@ test("Multiplicar dois números", function() {
     </div>
 	
 	<div class="step code" data-x="100" data-y="4300" data-rotate="90" data-scale="1">
-   		CUIDADO com o escopo das variáveis!
-    	<div class="split">
-    		<ul class="descricao">
-    			<li>Criar variáveis globais é mais fácil e perigoso do que parece;</li>
-    			<li>Váriaveis tem escopo por função e não por bloco;</li>
-    		</ul>
-		</div>
-		<div class="split">
-        	<pre><code class="javascript">cachorro = "Bidu"; // variável global
-function cebolinha(){
-  cachorro = "Floquinho"; // variável global
-}
-
-var porco = "Chovinista"; // variável global
-function chico_bento(){
-  var porco = "Torresmo"; // variável local
-}</code></pre>
-		</div>
+   		<span style="color:red">CUIDADO</span> com o escopo das variáveis!
+    </div>
+    
+	<div class="step code" data-x="100" data-y="5300" data-rotate="90" data-scale="1">
+   		<ul class="descricao">
+   			<li>Criar variáveis globais é mais fácil e perigoso do que parece;</li>
+   			<li>Váriaveis tem escopo por função e não por bloco;</li>
+   		</ul>
+    	<div>
+	    	<div class="split">
+	        	<pre><code class="javascript">cachorro = "Bidu"; // variável global
+	function cebolinha(){
+	  cachorro = "Floquinho"; // variável global
+	}</code></pre>
+			</div>
+			<div class="split">
+	        	<pre><code class="javascript">var porco = "Chovinista"; // variável global
+	function chico_bento(){
+	  var porco = "Torresmo"; // variável local
+	}</code></pre>
+			</div>
+	    </div>
     </div>
 	
 	
 	
-	<div class="step code" data-x="1100" data-y="3700" data-rotate="270" data-scale="1">
+	<div class="step code" data-x="1100" data-y="5300" data-rotate="270" data-scale="1">
    		Você está declarando suas variáveis certo?
-    	<div class="split">
-    		<ul class="descricao">
-    			<li>As variáveis são rastreadas e "declaradas" automaticamente no topo do escopo;</li>
-    			<li>Pode gerar erros lógicos de interpretação;</li>
-    		</ul>
-		</div>
+    </div>
+    
+	<div class="step code" data-x="1100" data-y="4300" data-rotate="270" data-scale="1">
+			<ul class="descricao">
+	   			<li>As variáveis são rastreadas e "declaradas" no topo do escopo;</li>
+	   			<li>Pode gerar erros lógicos de interpretação;</li>
+	   			<li>Esse comportamento é conhecido com hoisting;</li>
+	   		</ul>
+		<div>
 		<div class="split">
         	<pre><code class="javascript">pokemon = "Pikachu"; // variável global
 alert(pokemon); // "Pikachu"
@@ -180,11 +187,7 @@ ash();
 alert(pokemon); // "Pikachu"
 </code></pre>
 		</div>
-    </div>
-    
-	<div class="step code" data-x="1100" data-y="3240" data-rotate="270" data-scale="1">
 		<div class="split">
-			Como é interpretado
         	<pre><code class="javascript">pokemon = "Pikachu"; // variável global
 alert(pokemon); // "Pikachu"
 function ash(){
@@ -196,6 +199,7 @@ function ash(){
 ash();
 alert(pokemon); // "Pikachu"
 </code></pre>
+		</div>
 		</div>
     </div>
 	
@@ -555,6 +559,8 @@ test("Tamanho", function() {
       <p>http://enterprisejquery.com/2010/07/mock-your-ajax-requests-with-mockjax-for-rapid-development/</p>
       <strong>13 JavaScript Performance Tips</strong>
       <p>http://www.jonefox.com/blog/2012/07/10/13-javascript-performance-tips/</p>
+      <strong>Padrões JavaScript</strong>
+      <p>Stoyan Stefanov</p>
     </div>
 
     <div class="step referencias" data-x="5000" data-y="4300" data-rotate="0" data-scale="1">
