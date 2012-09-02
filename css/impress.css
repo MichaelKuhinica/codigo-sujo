@@ -461,6 +461,10 @@ div.fundo img {
 	left: 460px;
 }
 
+h2 {
+	text-align: center;
+}
+
 div.code {
 	width: 900px;
 	padding: 0px;
@@ -630,4 +634,14 @@ div.duvidas {
     font-size: 350%;
     width: 750px;
     height: 774px;
+}
+
+div.obrigado {
+    background: url(../img/obrigado.jpg) no-repeat 50% 50%;
+    background-size: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 350%;
+    width: 900px;
+    height: 700px;
 }

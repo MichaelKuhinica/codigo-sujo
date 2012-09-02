@@ -137,8 +137,8 @@ test("Multiplicar dois números", function() {
         MAS NÃO É SÓ ISSO!
     </div>
 	
-	<div class="step code" data-x="100" data-y="4300" data-rotate="90" data-scale="1">
-   		<span style="color:red">CUIDADO</span> com o escopo das variáveis!
+	<div class="step" data-x="100" data-y="4300" data-rotate="90" data-scale="1">
+   		<h2><span style="color:red">CUIDADO</span> com o escopo das variáveis!</h2>
     </div>
     
 	<div class="step code" data-x="100" data-y="5300" data-rotate="90" data-scale="1">
@@ -164,15 +164,14 @@ test("Multiplicar dois números", function() {
 	
 	
 	
-	<div class="step code" data-x="1100" data-y="5300" data-rotate="270" data-scale="1">
-   		Você está declarando suas variáveis certo?
+	<div class="step" data-x="1100" data-y="5300" data-rotate="-90" data-scale="1">
+   		<h2>Você está declarando suas variáveis certo?</h2>
     </div>
     
-	<div class="step code" data-x="1100" data-y="4300" data-rotate="270" data-scale="1">
+	<div class="step code" data-x="1100" data-y="4300" data-rotate="-90" data-scale="1">
 			<ul class="descricao">
-	   			<li>As variáveis são rastreadas e "declaradas" no topo do escopo;</li>
+	   			<li>O hoisting rastreia e "declara" as variáveis no topo do escopo;</li>
 	   			<li>Pode gerar erros lógicos de interpretação;</li>
-	   			<li>Esse comportamento é conhecido com hoisting;</li>
 	   		</ul>
 		<div>
 		<div class="split">
@@ -205,15 +204,17 @@ alert(pokemon); // "Pikachu"
 	
 	
 	
-	<div class="step code" data-x="2700" data-y="3700" data-rotate="180" data-scale="1">
-   		Onde estão as variáveis?
-    	<div class="split">
-    		<ul class="descricao">
-    			<li>Declarar todas as variáveis no início do escopo;</li>
-    			<li>Evita erros causados pelo hoisting;</li>
-    		</ul>
-		</div>
-		<div class="split">
+	<div class="step" data-x="3240" data-y="3700" data-rotate="-180" data-scale="1">
+   		<h2>Onde estão as suas variáveis?</h2>
+    </div>
+
+	<div class="step code" data-x="2240" data-y="3700" data-rotate="-180" data-scale="1">
+   		<ul class="descricao">
+   			<li>Evite erros causados pelo hoisting;</li>
+   			<li>Declare todas as variáveis no início do escopo com o padrão Single var;</li>
+   		</ul>
+		<div>
+			<div class="split">
         	<pre><code class="javascript">function looping(){
   divs = ["sidebar", "aviso", "news_1", "footer"];
   ...
@@ -222,12 +223,8 @@ alert(pokemon); // "Pikachu"
   }
 }
 </code></pre>
-		</div>
-    </div>
-	
-	<div class="step code" data-x="2240" data-y="3700" data-rotate="180" data-scale="1">
-		<div class="split">
-			Padrão Single var
+			</div>
+			<div class="split">
         	<pre><code class="javascript">function looping(){
   var divs, i, max;
   divs = ["sidebar", "aviso", "news_1", "footer"];
@@ -237,23 +234,26 @@ alert(pokemon); // "Pikachu"
   }  
 }
 </code></pre>
+			</div>
 		</div>
     </div>
 	
 	
 	
-	<div class="step code" data-x="2100" data-y="2500" data-rotate="0" data-scale="1">
-   		Funções e variáveis soltas
-    	<div class="split">
-    		<ul class="descricao">
-    			<li>Tenha controle do escopo das variáveis;</li>
-    			<li>Encapsule as funções por funcionalidade;</li>
-    			<li>Código independente;</li>
-    			<li>Variável undefined segura;</li>
-    		</ul>
-		</div>
-		<div class="split">
-        	<pre><code class="javascript">aviso_id = "#aviso";
+	<div class="step code" data-x="2240" data-y="2500" data-rotate="0" data-scale="1">
+   		<h2>Funções e variáveis perdidas?</h2>
+    </div>
+	
+	<div class="step code" data-x="3240" data-y="2500" data-rotate="0" data-scale="1">
+   		<ul class="descricao">
+   			<li>Tenha controle do escopo com o padrão Module;</li>
+   			<li>Encapsule as funções por funcionalidade;</li>
+   			<li>Código independente;</li>
+   			<li>Variável undefined segura;</li>
+   		</ul>
+   		<div>
+			<div class="split">
+        		<pre><code class="javascript">aviso_id = "#aviso";
 function someAviso() {
   $(aviso_id).fadeOut('slow');
 }
@@ -261,13 +261,9 @@ function mudaAviso(msg) {
   $(aviso_id).html(msg);
 }
 </code></pre>
-		</div>
-    </div>
-	
-	<div class="step code" data-x="2560" data-y="2500" data-rotate="0" data-scale="1">
-		<div class="split">
-			Padrão Module
-        	<pre><code class="javascript">var avisoModule = (function($, undefined){
+			</div>
+			<div class="split">
+        		<pre><code class="javascript">var avisoModule = (function($, undefined){
   var aviso_id = "#aviso";
   return {
     someAviso: function() { 
@@ -281,22 +277,24 @@ function mudaAviso(msg) {
 
 avisoModule.mudaAviso("Teste");
 </code></pre>
+			</div>
 		</div>
     </div>
     
 	
 	
 		
-    <div class="step code" data-x="2000" data-y="1200" data-rotate="-90" data-scale="1">
-	    Código não estruturado
-		<div class="split">
-			<ul class="descricao">
-				<li>Variável global acessível em qualquer parte da aplicação;</li>
-				<li>Funções soltas que utilizam a variável global;</li>
-			</ul>
-		</div>
-		<div class="split">
-        	<pre><code class="javascript">var pilha = [];
+    <div class="step code" data-x="2700" data-y="1700" data-rotate="180" data-scale="1">
+	    <h2>E agora? Como testar?</h2>
+    </div>
+    <div class="step code" data-x="3000" data-y="1000" data-rotate="180" data-scale="1">
+		<ul class="descricao">
+			<li>Variável global e funções com dependências não explícitas;</li>
+			<li>Dependência entre os casos de testes;</li>
+		</ul>
+		<div>
+			<div class="split">
+	        	<pre><code class="javascript">var pilha = [];
 function adicionar(item) {
     pilha.push(item);
 }
@@ -306,18 +304,9 @@ function retirar() {
 function tamanho() {
      return pilha.length;
 }</code></pre>
-		</div>
-    </div>
-    <div class="step code" data-x="2700" data-y="1200" data-rotate="-90" data-scale="1">
-     Problemas no testes
-		<div class="split">
-			<ul class="descricao">
-				<li>Dependência entre os casos de testes;</li>
-				<li>Dependência não explícita;</li>
-			</ul>
-		</div>
-    	<div class="split">
-        	<pre><code class="javascript">module("Pilha sem estrutura");
+			</div>
+	    	<div class="split">
+	        	<pre><code class="javascript">module("Pilha sem estrutura");
 test("Tamanho", function() {
     adicionar("item1");
     equal(tamanho(), 1);
@@ -328,13 +317,18 @@ test("Retirar", function() {
     adicionar("item2")
     equal(retirar(), "item2");
 });</code></pre>
+			</div>
 		</div>
     </div>
     
-    <div class="step code" data-x="2000" data-y="740" data-rotate="-90" data-scale="1">
-    	<div class="split">
-	    	Padrão Singleton
-        	<pre><code class="javascript">var appLista = (function() {
+    <div class="step code" data-x="2700" data-y="400" data-rotate="180" data-scale="1">
+    	<ul class="descricao">
+    		<li>O padrão Singleton ajuda a organizar o escopo;</li>
+    		<li>As vezes pode gerar dependências indesejadas;</li>
+    	</ul>
+    	<div>
+	    	<div class="split">
+	        	<pre><code class="javascript">var appLista = (function() {
     var pilha = [];
     return {
         adicionar: function (item) {
@@ -348,12 +342,9 @@ test("Retirar", function() {
         }
     };
 }());</code></pre>
-		</div>
-    </div>
-    <div class="step code" data-x="2700" data-y="740" data-rotate="-90" data-scale="1">
-    	&nbsp;
-    	<div class="split">
-        	<pre><code class="javascript">module("Pilha com Singleton");
+			</div>
+	    	<div class="split">
+	        	<pre><code class="javascript">module("Pilha com Singleton");
 test("Tamanho", function() {
     appLista.adicionar("item1");
     equal(appLista.tamanho(), 1);
@@ -364,13 +355,17 @@ test("Retirar", function() {
     appLista.adicionar("item2")
     equal(appLista.retirar(), "item2");
 });</code></pre>
+			</div>
 		</div>
     </div>
     
-    <div class="step code" data-x="2000" data-y="280" data-rotate="-90" data-scale="1">
-    	<div class="split">
-    	Padrão "Construtor"
-        	<pre><code class="javascript">function novaAppLista() {
+    <div class="step code" data-x="3000" data-y="-300" data-rotate="180" data-scale="1">
+    	<ul class="descricao">
+    		<li>Resolva problemas de dependências com o padrão "Construtor";</li>
+    	</ul>
+    	<div>
+	    	<div class="split">
+    	    	<pre><code class="javascript">function novaAppLista() {
     var pilha = [];
     return {
         adicionar: function (item) {
@@ -386,12 +381,9 @@ test("Retirar", function() {
 }
 
 var appLista = novaAppLista();</code></pre>
-		</div>
-    </div>
-    <div class="step code" data-x="2700" data-y="280" data-rotate="-90" data-scale="1">
-    	&nbsp;
-    	<div class="split">
-        	<pre><code class="javascript">module("Pilha com Contrutor");
+			</div>
+	    	<div class="split">
+	        	<pre><code class="javascript">module("Pilha com Contrutor");
 test("Retirar", function() {
     var appLista = novaAppLista();
     appLista.adicionar("item1");
@@ -404,20 +396,24 @@ test("Tamanho", function() {
     appLista.adicionar("item1");
     equal(appLista.tamanho(), 1);
 });</code></pre>
+			</div>
 		</div>
     </div>
 
 
 
 	<div class="step code" data-x="4000" data-y="-1000" data-rotate="0" data-scale="1">
-     	Criando fixtures do DOM
-		<div class="split">
-			<ul class="descricao">
-				<li>Permite realizar testes de manipulação do DOM;</li>
-			</ul>
-		</div>
-    	<div class="split">
-        	<pre><code class="xml">&lt;!DOCTYPE html&gt;
+     	<h2>Tenha controle do seu DOM!</h2>
+	</div>
+    
+	<div class="step code" data-x="5000" data-y="-1000" data-rotate="0" data-scale="1">
+		<ul class="descricao">
+			<li>Muito comum manipular elementos do DOM com seletores JavaScript;</li>
+			<li>As Fixtures lhe ajudam na simulação desse ambiente;</li>
+		</ul>
+		<div>
+    		<div class="split">
+        		<pre><code class="xml">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
     &lt;title&gt;Exemplo Fixture&lt;/title&gt;
@@ -433,12 +429,9 @@ test("Tamanho", function() {
   &lt;script src="../testes.js"&gt;&lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-		</div>
-    </div>
-	<div class="step code" data-x="4460" data-y="-1000" data-rotate="0" data-scale="1">
-    	<div class="split">
-          &nbsp;
-        	<pre><code class="javascript">test("Adicionar fixture", function() {
+			</div>
+	    	<div class="split">
+	        	<pre><code class="javascript">test("Adicionar fixture", function() {
   $('#qunit-fixture').html(
   	$('&lt;div id="conta"&gt;').html(
   	  '&lt;label id="saldo"&gt;Saldo: 1.00&lt;/label&gt;'+
@@ -454,22 +447,24 @@ test("Tamanho", function() {
   equal($('#saldo').html(), 'Saldo: 5.00');
 });
 </code></pre>
+			</div>
 		</div>
     </div>
 
 
 
-	<div class="step code" data-x="4000" data-y="0" data-rotate="0" data-scale="1">
-     	Testes de requisições em Ajax
-		<div class="split">
-			<ul class="descricao">
-				<li>Dependência do servidor para responder a requisição;</li>
-				<li>Falta de controle dos dados da resposta;</li>
-        <li>Testes mais lentos;</li>
-			</ul>
-		</div>
-    	<div class="split">
-        	<pre><code class="xml">&lt;!DOCTYPE html&gt;
+	<div class="step code" data-x="4500" data-y="0" data-rotate="0" data-scale="1">
+     	<h2>Não fique esperando o loading...</h2>
+    </div>
+    
+	<div class="step code" data-x="5500" data-y="0" data-rotate="0" data-scale="1">
+		<ul class="descricao">
+			<li>As requisições Ajax dependem da resposta do servidor;</li>
+			<li>O MockAjax controla a requisição e os dados de resposta;</li>
+		</ul>
+		<div>
+	    	<div class="split">
+	        	<pre><code class="xml">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
     &lt;title&gt;Saldo da Conta&lt;/title&gt;
@@ -484,12 +479,9 @@ test("Tamanho", function() {
 	&lt;div id="saldo"&gt;&lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-		</div>
-    </div>
-	<div class="step code" data-x="4460" data-y="0" data-rotate="0" data-scale="1">
-    	<div class="split">
-    		jQuery Mockajax
-        	<pre><code class="javascript">asyncTest("Mockajax", function() {
+			</div>
+	    	<div class="split">
+	        	<pre><code class="javascript">asyncTest("Mockajax", function() {
   expect( 1 );
 	
   $('#qunit-fixture').html($('&lt;div id="saldo"&gt;'));
@@ -506,14 +498,20 @@ test("Tamanho", function() {
   }, 100);
 });
 </code></pre>
+			</div>
 		</div>
     </div>
 
 
 	
-    <div class="step phantomjs" data-x="4000" data-y="1000" data-rotate="-45" data-scale="1">
+    <div class="step" data-x="7000" data-y="-1000" data-rotate="0" data-scale="1">
+		<h2>Automatize sempre!</h2>
 	</div>
-    <div class="step" data-x="5000" data-y="1000" data-rotate="0" data-scale="1">
+    
+    <div class="step phantomjs" data-x="7000" data-y="0" data-rotate="-45" data-scale="1">
+	</div>
+    
+    <div class="step" data-x="7000" data-y="1000" data-rotate="0" data-scale="1">
     	Rodando em linha de comando
     	<ol class="descricao">
     		<li>Instalar o PhantomJS <br /><a href="http://phantomjs.org/download.html">http://phantomjs.org/download.html</a></li>
@@ -525,11 +523,11 @@ test("Tamanho", function() {
     	</ol>
 	</div>
 
-    <div class="step real-code" data-x="5000" data-y="2000" data-rotate="0" data-scale="1">
+    <div class="step real-code" data-x="7100" data-y="2000" data-rotate="0" data-scale="1">
         REAL CODE!
     </div>
 
-    <div class="step armstrong" data-x="6000" data-y="2000" data-rotate="0" data-scale="1">
+    <div class="step armstrong" data-x="5100" data-y="1500" data-rotate="0" data-scale="3">
         ...um salto gigantesco <br /><br /><br /><br /><br /><br />para a humanidade!
     </div>
 
@@ -570,6 +568,9 @@ test("Tamanho", function() {
 
     <div class="step duvidas" data-x="5000" data-y="5100" data-rotate="0" data-scale="1">
       Dúvidas e comentários
+    </div>
+
+    <div class="step obrigado" data-x="6000" data-y="5100" data-rotate="360" data-scale="1">
     </div>
 
     <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
