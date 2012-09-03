@@ -216,9 +216,9 @@ alert(pokemon); // "Pikachu"
 		<div>
 			<div class="split">
         	<pre><code class="javascript">function looping(){
-  divs = ["sidebar", "aviso", "news_1", "footer"];
   ...
-  for(i = 0; i &lt; divs.length; i++) {
+  var divs = ["sidebar", "aviso", "footer"];
+  for(var i = 0; i &lt; divs.length; i++) {
     $("#"+divs[i]).removeClass("ativo");
   }
 }
