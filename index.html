@@ -464,21 +464,21 @@ test("Tamanho", function() {
 		</ul>
 		<div>
 	    	<div class="split">
-	        	<pre><code class="xml">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;title&gt;Saldo da Conta&lt;/title&gt;
-    &lt;script src="../jquery.js"&gt;&lt;/script&gt;
-    &lt;script src="../mockajax.js"&gt;&lt;/script&gt;
-    &lt;script src="../exemplo.js"&gt;&lt;/script&gt;
-    &lt;script&gt;
-    	$(function(){ atualizaSaldo(); });
-    &lt;/script&gt;
-  &lt;/head&gt;
-&lt;body&gt;
-	&lt;div id="saldo"&gt;&lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+	        	<pre><code class="xml">&lt;body&gt;
+  &lt;div id="saldo"&gt;&lt;/div&gt;
+  &lt;script&gt; 
+    $(function(){ atualizaSaldo(1); }); 
+  &lt;/script&gt;
+&lt;/body&gt;</code></pre>
+	        	<pre style="margin-top:10px;"><code class="javascript">function atualizaSaldo(id){
+  $.getJSON('/busca_saldo?id='+id, function(response) {
+    if ( response.status == 'valido') {
+      $('#saldo').html( 'Saldo: ' + response.saldo );
+    } else {
+      $('#saldo').html( 'Conta inválida' );
+    }
+  });
+}</code></pre>
 			</div>
 	    	<div class="split">
 	        	<pre><code class="javascript">asyncTest("Mockajax", function() {
